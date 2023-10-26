@@ -457,6 +457,8 @@ a:hover { color: var(--bs-link-hover-color); }
     transition: rotate .3s;
 }
 
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: 0; }
+
 #left-pane {
     z-index: 1000; position: absolute; top: 0; bottom: 46px; left: -100%;
     width: 100%;

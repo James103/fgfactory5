@@ -11,41 +11,39 @@ var TplRightPane = function(data) {
         html += '<div class="my-lg-3 mx-auto px-2 py-3 bg-dark" style="max-width: 720px;">'
             html += '<div class="row gx-2 gy-3">'
                 html += '<div class="col-12">'
-                    html += '<div class="border-bottom pb-1">'
-                        html += '<div class="row gx-2 align-items-center">'
-                            html += '<div class="col-auto">' + displayIcon(product.icon, product.iconText, 24) + '</div>'
-                            html += '<div class="col text-truncate" style="line-height:29px;"><span class="fs-6 text-white">' + i18next.t(scenario.label + product.label) + '</span></div>'
-                            if (product.completed) {
-                                html += '<div id="selectedElem-count" class="col-auto"></div>'
-                            }
-                            else {
-                                if (product.cat == 'machine') html += '<div id="selectedElem-availableCount" class="col-auto"></div>'
-                                html += '<div id="selectedElem-count" class="col-auto"></div>'
-                                if (product.cat != 'mission') {
-                                    if (product.counts && product.counts.length > 1) {
-                                        html += '<div class="col-auto">'
-                                            html += '<select name="' + product.id + '" class="form-control text-center" onchange="window.app.doClick(\'setProductSelectCount\', { productId:\'' + product.id + '\', count:this.value })">'
-                                                product.counts.forEach(count => {
-                                                    html += '<option' + (product.selectCount == count ? ' selected' : '') + '  value="' + count + '">' + i18next.t('word_' + count) + '</option>'
-                                                })
-                                            html += '</select>'
-                                        html += '</div>'
-                                    }
+                    html += '<div class="row gx-2 align-items-center">'
+                        html += '<div class="col-auto">' + displayIcon(product.icon, product.iconText, 24) + '</div>'
+                        html += '<div class="col text-truncate" style="line-height:29px;"><span class="fs-6 text-white">' + i18next.t(scenario.label + product.label) + '</span></div>'
+                        if (product.completed) {
+                            html += '<div id="selectedElem-count" class="col-auto"></div>'
+                        }
+                        else {
+                            if (product.cat == 'machine') html += '<div id="selectedElem-availableCount" class="col-auto"></div>'
+                            html += '<div id="selectedElem-count" class="col-auto"></div>'
+                            if (product.cat != 'mission') {
+                                if (product.counts && product.counts.length > 1) {
                                     html += '<div class="col-auto">'
-                                        value = game.canProductBuild(product)
-                                        html += '<button type="button" id="selectedElem-buildBtn" class="btn btn-outline-primary' + (value == false ? ' disabled' : '') + '" onclick="window.app.doClick(\'productBuild\', { productId:\'' + product.id + '\' })">'
-                                            if (product.cat == 'machine' || product.cat == 'product') html += i18next.t('word_build')
-                                            else if (product.cat == 'tech') html += i18next.t('word_research')
-                                        html += '</button>'
+                                        html += '<select name="' + product.id + '" class="form-control text-center" onchange="window.app.doClick(\'setProductSelectCount\', { productId:\'' + product.id + '\', count:this.value })">'
+                                            product.counts.forEach(count => {
+                                                html += '<option' + (product.selectCount == count ? ' selected' : '') + '  value="' + count + '">' + i18next.t('word_' + count) + '</option>'
+                                            })
+                                        html += '</select>'
                                     html += '</div>'
                                 }
+                                html += '<div class="col-auto">'
+                                    value = game.canProductBuild(product)
+                                    html += '<button type="button" id="selectedElem-buildBtn" class="btn btn-outline-primary' + (value == false ? ' disabled' : '') + '" onclick="window.app.doClick(\'productBuild\', { productId:\'' + product.id + '\' })">'
+                                        if (product.cat == 'machine' || product.cat == 'product') html += i18next.t('word_build')
+                                        else if (product.cat == 'tech') html += i18next.t('word_research')
+                                    html += '</button>'
+                                html += '</div>'
                             }
-                        html += '</div>'
+                        }
                     html += '</div>'
                 html += '</div>'
                 if (!product.completed) {
                     if (product.desc) {
-                        html += '<div class="col-12">'
+                        html += '<div class="col-12 small">'
                             html += i18next.t(scenario.label + product.desc)
                         html += '</div>'
                     }

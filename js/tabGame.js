@@ -6,7 +6,7 @@ var TplTabGame = function(data) {
     html += '<div class="position-relative px-0 h-100" role="tabpanel" tabindex="0">'
         html += '<div id="left-pane" class="bg-dark' + (data.leftOpen ? ' open' : '') + '"></div>'
         html += '<div id="right-pane"></div>'
-        html += '<div class="nav nav-tabs align-items-center border-top bg-dark" style="height: 46px; position: absolute; bottom: 0; width: 100%;">'
+        html += '<div class="nav nav-tabs align-items-center border-top border-dark bg-light" style="height: 46px; position: absolute; bottom: 0; width: 100%;">'
             html += '<div class="col-auto d-sm-none px-2">'
                 html += '<button type="button" class="btn btn-outline-primary lh-1" onclick="window.app.doClick(\'toggleLeft\')">'
                     html += '<i class="fas fs-6 fa-bars"></i>'

@@ -145,7 +145,7 @@ class LeftPane {
             if (node) node.classList.add('active')
             //---
             node = document.getElementById('left-pane')
-            if (node.classList.contains('open')) this.doClick('toggleLeft')
+            if (node.classList.contains('open')) window.app.doClick('toggleLeft')
             //---
             let elem = window.app.game.getElem(this.selectedElemId)
             if (elem.notified) {
