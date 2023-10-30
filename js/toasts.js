@@ -5,7 +5,7 @@ var TplToastExport = function() {
     //---
     html += '<div id="toastExport" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">'
         html += '<div class="d-flex">'
-            html += '<div class="col toast-body">'
+            html += '<div class="col toast-body small">'
                 html += i18next.t('toast_export')
             html += '</div>'
             html += '<button type="button" class="btn-close p-2" data-bs-dismiss="toast" aria-label="' + i18next.t('toast_close') + '"><i class="text-black fas fa-times"></i></button>'
@@ -21,7 +21,7 @@ var TplToastImportEmpty = function() {
     //---
     html += '<div id="toastImportEmpty" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">'
         html += '<div class="d-flex">'
-            html += '<div class="col toast-body">'
+            html += '<div class="col toast-body small">'
                 html += i18next.t('toast_importEmpty')
             html += '</div>'
             html += '<button type="button" class="btn-close p-2" data-bs-dismiss="toast" aria-label="' + i18next.t('toast_close') + '"><i class="text-white fas fa-times"></i></button>'
@@ -37,7 +37,7 @@ var TplToastImportCorrupted = function() {
     //---
     html += '<div id="toastImportCorrupted" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">'
         html += '<div class="d-flex">'
-            html += '<div class="col toast-body">'
+            html += '<div class="col toast-body small">'
                 html += i18next.t('toast_importCorrupted')
             html += '</div>'
             html += '<button type="button" class="btn-close p-2" data-bs-dismiss="toast" aria-label="' + i18next.t('toast_close') + '"><i class="text-white fas fa-times"></i></button>'

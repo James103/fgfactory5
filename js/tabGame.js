@@ -29,8 +29,8 @@ class TabGame {
         this.img = 'fas fa-industry'
         this.label = 'tab_game'
         //---
-        this.leftPane = new LeftPane()
-        this.rightPane = new RightPane()
+        this.paneLeft = new PaneLeft()
+        this.paneRight = new PaneRight()
         //---
         this.reset()
     }
@@ -39,22 +39,22 @@ class TabGame {
         //---
         this.leftOpen = false
         //---
-        this.leftPane.reset()
-        this.rightPane.reset()
+        this.paneLeft.reset()
+        this.paneRight.reset()
     }
     //---
     load(data) {
         //---
-        if (data.leftPane != null) this.leftPane.load(data.leftPane)
-        if (data.rightPane != null) this.rightPane.load(data.rightPane)
+        if (data.paneLeft != null) this.paneLeft.load(data.paneLeft)
+        if (data.paneRight != null) this.paneRight.load(data.paneRight)
     }
     //---
     getSaveData() {
         //---
         let savedData = {}
         //---
-        savedData.leftPane = this.leftPane.getSaveData()
-        savedData.rightPane = this.rightPane.getSaveData()
+        savedData.paneLeft = this.paneLeft.getSaveData()
+        savedData.paneRight = this.paneRight.getSaveData()
         //---
         return savedData
     }
@@ -64,8 +64,8 @@ class TabGame {
         let node = document.getElementById('tab-content')
         node.innerHTML = TplTabGame(this)
         //---
-        this.leftPane.display()
-        this.rightPane.display()
+        this.paneLeft.display()
+        this.paneRight.display()
     }
     //---
     refresh(deltaMs) {
@@ -81,8 +81,8 @@ class TabGame {
         }
         
         //---
-        this.leftPane.refresh(deltaMs)
-        this.rightPane.refresh(deltaMs)
+        this.paneLeft.refresh(deltaMs)
+        this.paneRight.refresh(deltaMs)
     }
     //---
     doClick(action, data) {
@@ -104,11 +104,11 @@ class TabGame {
         //---
         else if (action == 'refreshTabGame') {
             //---
-            this.leftPane.display()
-            this.rightPane.display()
+            this.paneLeft.display()
+            this.paneRight.display()
         }
         //---
-        this.leftPane.doClick(action, data)
-        this.rightPane.doClick(action, data)
+        this.paneLeft.doClick(action, data)
+        this.paneRight.doClick(action, data)
     }
 }

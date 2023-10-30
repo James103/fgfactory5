@@ -1,5 +1,5 @@
 //---
-var TplRightPane = function(data) {
+var TplPaneRight = function(data) {
     //---
     let game = window.app.game
     let scenario = window.app.game.currentScenario
@@ -163,7 +163,7 @@ var TplRightPane = function(data) {
     return html
 }
 //---
-class RightPane {
+class PaneRight {
     //---
     constructor() {        
         //---
@@ -194,7 +194,7 @@ class RightPane {
         if (this.selectedElemId == null) this.selectedElemId = window.app.game.currentScenario.initElemId
         //---
         let node = document.getElementById('right-pane')
-        node.innerHTML = TplRightPane(this)
+        node.innerHTML = TplPaneRight(this)
     }
     //---
     refresh(deltaMs) {

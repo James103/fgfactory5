@@ -1,5 +1,5 @@
 //---
-var TplLeftPane = function(data) {
+var TplPaneLeft = function(data) {
     //---
     let html = ''
     //---
@@ -11,11 +11,11 @@ var TplLeftPane = function(data) {
             if (elems.length > 0) {
                 //---
                 html += '<div class="p-2">'
-                    html += '<div class="mb-1 small">' + i18next.t(scenario.label + category) + '</div>'
-                    html += '<div class="row g-1 nav nav-pills">'
+                    html += '<div class="row g-1">'
+                        html += '<div class="col-12 small">' + i18next.t(scenario.label + category) + '</div>'
                         elems.forEach(elem => {
-                            html += '<div class="col-12 nav-item">'
-                                html += '<button id="' + elem.id + '-elem-link" type="button" class="position-relative w-100 text-start nav-link' + (elem.id == data.selectedElemId ? ' active' : '') + '" onclick="window.app.doClick(\'selectElem\', { elemId:\'' + elem.id + '\' })">'
+                            html += '<div class="col-12">'
+                                html += '<button id="' + elem.id + '-elem-link" type="button" class="position-relative w-100 text-start btn' + (elem.id == data.selectedElemId ? ' btn-primary' : ' btn-light') + '" onclick="window.app.doClick(\'selectElem\', { elemId:\'' + elem.id + '\' })">'
                                     if (elem.notified) {
                                         html += '<div class="position-absolute lh-1 small" style="top: -.125rem; left: -.125rem;">'
                                             html += '<i class="fas fa-dot-circle text-success"></i>'
@@ -41,7 +41,7 @@ var TplLeftPane = function(data) {
     return html
 }
 //---
-class LeftPane {
+class PaneLeft {
     //---
     constructor() {        
         //---
@@ -75,7 +75,7 @@ class LeftPane {
         if (elem.notified) elem.notified = false
         //---
         let node = document.getElementById('left-pane')
-        node.innerHTML = TplLeftPane(this)
+        node.innerHTML = TplPaneLeft(this)
     }
     //---
     refresh(deltaMs) {
@@ -137,12 +137,20 @@ class LeftPane {
             let node
             //---
             node = document.getElementById(this.selectedElemId + '-elem-link')
-            if (node) node.classList.remove('active')
+            if (node) {
+                //---
+                node.classList.remove('btn-primary')
+                node.classList.add('btn-light')
+            }
             //---
             this.selectedElemId = data.elemId
             //---
             node = document.getElementById(this.selectedElemId + '-elem-link')
-            if (node) node.classList.add('active')
+            if (node) {
+                //---
+                node.classList.remove('btn-light')
+                node.classList.add('btn-primary')
+            }
             //---
             node = document.getElementById('left-pane')
             if (node.classList.contains('open')) window.app.doClick('toggleLeft')
