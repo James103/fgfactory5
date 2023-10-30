@@ -112,13 +112,13 @@ DATA.scenarios.push({
         {	id:'poison-capsule',	type:'product',	cat:'product',	label:'poison-capsule',	icon:'poison-capsule',	reqs:[ 'military-3' ],	stack:100,	counts:[ '1', '5', '10', '25' ],	items:{ 'circuit-1':3, 'steel':3, 'coal':10 },	},                
         {	id:'artillery-turret',	type:'product',	cat:'product',	label:'artillery-turret',	icon:'artillery-turret',	reqs:[ 'artillery' ],	stack:10,	counts:[ '1', '5' ],	items:{ 'concrete':60, 'circuit-2':20, 'circuit-1':40, 'gear':40, 'steel':60 },	},
         //---
-        {	id:'mission-vehicle',	type:'product',	label:'mission-vehicle',	desc:'mission-vehicle_desc',	icon:'car-tech',	cat:'mission',	reqs:[ 'tut-assembler' ],	products:{ 'car':1, 'tank':1, 'spidertron':1 },	},
+        {	id:'mission-vehicle',	type:'product',	label:'mission-vehicle',	desc:'mission-vehicle_desc',	icon:'car-tech',	cat:'mission',	reqs:[ 'tut-assembler' ],	stack:1,	products:{ 'car':1, 'tank':1, 'spidertron':1 },	},
         //---
-        {	id:'car',	type:'product',	cat:'product',	label:'car',	icon:'car',	reqs:[ 'car-tech' ],	output:1,	items:{ 'engine-1':8, 'steel':5, 'iron-plate':20 },	},
-        {	id:'tank',	type:'product',	cat:'product',	label:'tank',	icon:'tank',	reqs:[ 'tank-tech' ],	output:1,	items:{ 'circuit-2':20, 'engine-1':64, 'gear':30, 'steel':100 },	},        
-        {	id:'spidertron',	type:'product',	cat:'product',	label:'spidertron',	icon:'spidertron',	reqs:[ 'spidertron-tech' ],	output:1,	items:{ 'fish':1, 'efficiency-module-3':2, 'low-density-structure':250, 'rocket-control-unit':16, 'engine-2':120, 'circuit-3':440, 'steel':80, 'circuit-1':30, 'gear':30, 'iron-plate':40  },	},
+        {	id:'car',	type:'product',	cat:'product',	label:'car',	icon:'car',	reqs:[ 'car-tech' ],	stack:1,	output:1,	items:{ 'engine-1':8, 'steel':5, 'iron-plate':20 },	},
+        {	id:'tank',	type:'product',	cat:'product',	label:'tank',	icon:'tank',	reqs:[ 'tank-tech' ],	stack:1,	output:1,	items:{ 'circuit-2':20, 'engine-1':64, 'gear':30, 'steel':100 },	},
+        {	id:'spidertron',	type:'product',	cat:'product',	label:'spidertron',	icon:'spidertron',	reqs:[ 'spidertron-tech' ],	stack:1,	output:1,	items:{ 'fish':1, 'efficiency-module-3':2, 'low-density-structure':250, 'rocket-control-unit':16, 'engine-2':120, 'circuit-3':440, 'steel':80, 'circuit-1':30, 'gear':30, 'iron-plate':40  },	},
         //---
-        {	id:'mission-train',	type:'product',	label:'mission-train',	desc:'mission-train_desc',	icon:'locomotive',	cat:'mission',	reqs:[ 'tut-assembler' ],	products:{ 'locomotive':5, 'wagon-1':5, 'wagon-2':5, 'wagon-3':5, 'rail':100, 'rail-stop':10, 'rail-signal':50, 'rail-chain':50 },	},
+        {	id:'mission-train',	type:'product',	label:'mission-train',	desc:'mission-train_desc',	icon:'locomotive',	cat:'mission',	reqs:[ 'tut-assembler' ],	stack:1,	products:{ 'locomotive':5, 'wagon-1':5, 'wagon-2':5, 'wagon-3':5, 'rail':100, 'rail-stop':10, 'rail-signal':50, 'rail-chain':50 },	},
         //---
         {	id:'locomotive',	type:'product',	cat:'product',	label:'locomotive',	icon:'locomotive',	reqs:[ 'railway' ],	stack:5,		output:1,	items:{ 'steel':30, 'engine-1':20, 'circuit-1':10 },	},
         {	id:'wagon-1',	type:'product',	cat:'product',	label:'wagon-1',	icon:'wagon-1',	reqs:[ 'railway' ],	stack:5,		output:1,	items:{ 'iron-plate':20, 'gear':10, 'steel':20 },	},
@@ -129,7 +129,7 @@ DATA.scenarios.push({
         {	id:'rail-signal',	type:'product',	cat:'product',	label:'rail-signal',	icon:'rail-signal',	reqs:[ 'rail-signals' ],	stack:50,	counts:[ '1', '5', '10' ],	output:1,	items:{ 'iron-plate':5, 'circuit-1':1 },	},
         {	id:'rail-chain',	type:'product',	cat:'product',	label:'rail-chain',	icon:'rail-chain',	reqs:[ 'rail-signals' ],	stack:50,	counts:[ '1', '5', '10' ],	output:1,	items:{ 'iron-plate':5, 'circuit-1':1 },	},
         //---
-        {	id:'mission-equipment',	type:'product',	label:'mission-equipment',	desc:'mission-equipment_desc',	icon:'personal-panel-tech',	cat:'mission',	reqs:[ 'tut-assembler' ],	products:{ 'armor-1':1, 'armor-2':1, 'armor-3':1, 'armor-4':1, 'armor-5':1, 'personal-panel':20, 'personal-battery-1':20, 'personal-battery-2':20, 'personal-reactor':20, 'personal-nightvision':5, 'personal-belt':5, 'personal-exoskeleton':1, 'personal-shield-1':1, 'personal-shield-2':1, 'personal-roboport-1':1, 'personal-roboport-2':1, 'defender':100, 'distractor':100, 'destroyer':100, 'personal-laser':1, 'personal-discharger':1 },	},
+        {	id:'mission-equipment',	type:'product',	label:'mission-equipment',	desc:'mission-equipment_desc',	icon:'personal-panel-tech',	cat:'mission',	reqs:[ 'tut-assembler' ],	stack:1,	products:{ 'armor-1':1, 'armor-2':1, 'armor-3':1, 'armor-4':1, 'armor-5':1, 'personal-panel':20, 'personal-battery-1':20, 'personal-battery-2':20, 'personal-reactor':20, 'personal-nightvision':5, 'personal-belt':5, 'personal-exoskeleton':1, 'personal-shield-1':1, 'personal-shield-2':1, 'personal-roboport-1':1, 'personal-roboport-2':1, 'defender':100, 'distractor':100, 'destroyer':100, 'personal-laser':1, 'personal-discharger':1 },	},
         //---
         {	id:'armor-1',	type:'product',	cat:'product',	label:'armor-1',	icon:'armor-1',	reqs:[ 'tut-assembler' ],	stack:1,		output:1,	items:{ 'iron-plate':40 },	},
         {	id:'armor-2',	type:'product',	cat:'product',	label:'armor-2',	icon:'armor-2',	reqs:[ 'armor-2-tech' ],	stack:1,		output:1,	items:{ 'steel':50, 'copper-plate':100 },	},
