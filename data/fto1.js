@@ -185,7 +185,7 @@ DATA.scenarios.push({
         {	id:'efficiency-2',	type:'product',	cat:'tech',	label:'efficiency-2',	icon:'efficiency-2',		reqs:[ 'efficiency-1', 'electronics-3' ],		stack:1,	items:{ 'pack-red':75, 'pack-green':75, 'pack-blue':75 },	},
         {	id:'efficiency-3',	type:'product',	cat:'tech',	label:'efficiency-3',	icon:'efficiency-3',		reqs:[ 'efficiency-2', 'pack-purple-tech' ],		stack:1,	items:{ 'pack-red':300, 'pack-green':300, 'pack-blue':300, 'pack-purple':300 },	},
         {	id:'productivity-1',	type:'product',	cat:'tech',	label:'productivity-1',	icon:'productivity-1',		reqs:[ 'modules' ],		stack:1,	items:{ 'pack-red':50, 'pack-green':50 },	},
-        {	id:'robotics-1',	type:'product',	cat:'tech',	label:'robotics-1',	icon:'robotics-1',		reqs:[ 'robotics-1' ],		stack:1,	items:{ 'pack-red':250, 'pack-green':250, 'pack-blue':250 },	},
+        {	id:'robotics-1',	type:'product',	cat:'tech',	label:'robotics-1',	icon:'robotics-1',		reqs:[ 'battery-tech', 'engine-2-tech' ],		stack:1,	items:{ 'pack-red':250, 'pack-green':250, 'pack-blue':250 },	},
         {	id:'robotics-2',	type:'product',	cat:'tech',	label:'robotics-2',	icon:'robotics-2',		reqs:[ 'robotics-1' ],		stack:1,	items:{ 'pack-red':100, 'pack-green':100, 'pack-blue':100 },	},
         {	id:'military-1',	type:'product',	cat:'tech',	label:'military-1',	icon:'military',	iconText:'1',	reqs:[ 'tut-assembler' ],		stack:1,	items:{ 'pack-red':10 },	},
         {	id:'military-2',	type:'product',	cat:'tech',	label:'military-2',	icon:'military',	iconText:'2',	reqs:[ 'military-1', 'steel-tech', 'pack-green-tech' ],		stack:1,	items:{ 'pack-red':20, 'pack-green':20 },	},
